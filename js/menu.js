@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const arc = 2 * Math.PI / length;
         const radius = 45;
 
-        buttonMenu.addEventListener('click', function() {
-
+        buttonMenu.addEventListener('click', function(event) {
+            event.preventDefault()
             active = !active;
 
             if (active) {
