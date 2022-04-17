@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < particlesArray.length; i++) {
             particlesArray[i].update(); 
         }
-        connect();
+        //connect();
     }
 
     window.addEventListener('mouseout', function() {

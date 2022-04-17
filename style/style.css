@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -86,6 +87,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 120%;
   height: 120%;
   background: url("../img/background-img.jpg") 0 0/cover no-repeat;
+  -webkit-box-shadow: inset 0px 0px 100px 100px #000;
+          box-shadow: inset 0px 0px 100px 100px #000;
   z-index: 1;
 }
 
@@ -124,6 +127,11 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-transition: 0.6s all 0s;
   transition: 0.6s all 0s;
 }
+.circular-menu__item svg {
+  width: 40px;
+  fill: #fff;
+  z-index: 2;
+}
 .circular-menu__button {
   position: absolute;
   top: 50%;
@@ -147,7 +155,6 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.6s all 0s;
   background: #fff;
   z-index: 2;
-  transition: 0.6s all 0s;
   -webkit-box-shadow: 0px 0px 2px 0px #fff;
           box-shadow: 0px 0px 2px 0px #fff;
 }
@@ -195,6 +202,26 @@ h1, h2, h3, h4, h5, h6 {
 .circular-menu__button_active ~ .circular-menu__item:hover .button-shell {
   -webkit-box-shadow: 0px 0px 3px 7px #000;
           box-shadow: 0px 0px 3px 7px #000;
+}
+.circular-menu__name-item {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  min-width: 100px;
+  min-height: 50px;
+  text-align: center;
+  font-family: "Permanent Marker";
+  font-size: 26px;
+  font-weight: 600;
+  text-shadow: 0px 0px 6px #fff;
+  -webkit-transition: 0.6s all 0s;
+  transition: 0.6s all 0s;
+  opacity: 0;
+}
+.circular-menu__name-item._active {
+  opacity: 1;
 }
 
 .button-shell {

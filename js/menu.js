@@ -25,9 +25,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     const angle = i * arc;
                     const x = radius * Math.cos(angle);
                     const y = radius * Math.sin(angle);
-
                     itemsMenu[i].style.left = 50 + x + '%';
                     itemsMenu[i].style.top = 50 + y + '%';
+
+                    const namesConteiner = menu.querySelector('.circular-menu__name-item');
+                    let name = '';
+
+                    namesConteiner.insertAdjacentHTML("afterbegin", name);
+
+                    itemsMenu[i].addEventListener('mouseenter', function() {
+                        name = itemsMenu[i].getAttribute('data-name').toUpperCase();
+                        namesConteiner.innerHTML = name;
+                        namesConteiner.classList.add('_active');
+                    });
+                    itemsMenu[i].addEventListener('mouseleave', function() {
+                        name = '';
+                        namesConteiner.innerHTML = name;
+                        namesConteiner.classList.remove('_active');
+                    });
                 }
             } else {
                 buttonMenu.classList.remove('circular-menu__button_active')
