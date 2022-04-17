@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         draw() {
             context.beginPath();
             context.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-            context.fillStyle = '#ec8b0b';
+            context.fillStyle = 'rgba(29,29,29,1)';
             context.fill();
         }
         update() {
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
             let directionX = (Math.random() * 5) - 2.5;
             let directionY = (Math.random() * 5) - 2.5;
-            let color = '#ec8b0b';
+            let color = 'rgba(29,29,29,1)';
 
             particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
         }
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 * (particlesArray[a].y - particlesArray[b].y));
                 if (distance < (canvas.width / 7) * (canvas.height / 7)) {
                     opacityValue = 1 - (distance/20000);
-                    context.strokeStyle = `rgba(140,85,31,${opacityValue}`;
+                    context.strokeStyle = `rgba(29,29,29,${opacityValue}`;
                     context.lineWidth = 1;
                     context.beginPath;
                     context.moveTo(particlesArray[a].x, particlesArray[a].y);
