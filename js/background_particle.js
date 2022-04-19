@@ -60,13 +60,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
                     this.x += 10;
                 }
-                if (mouse.x > this.x && this.x > canvas.size * 10) {
+                if (mouse.x > this.x && this.x > this.size * 10) {
                     this.x -= 10;
                 }
                 if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
                     this.y += 10;
                 }
-                if (mouse.y > this.y && this.y > canvas.size * 10) {
+                if (mouse.y > this.y && this.y > this.size * 10) {
                     this.y -= 10;
                 }
             }
@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function init() {
         particlesArray = [];
         let numberOfParticles = (canvas.height * canvas.width) / 9000;
-        for (let i = 0; i < numberOfParticles*2; i++) {
-            let size = (Math.random() * 5) + 1;
+        for (let i = 0; i < numberOfParticles*1.2; i++) {
+            let size = (Math.random() * 4) + 3;
             let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
             let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
             let directionX = (Math.random() * 5) - 2.5;
