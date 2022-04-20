@@ -2,11 +2,6 @@ const popupLinks = document.querySelectorAll('.popup-link');
 const body = document.querySelector('body');
 const lockPadding = document.querySelectorAll('.lock-padding');
 
-document.querySelector('.wrapper').style.width = window.innerWidth + 'px';
-window.addEventListener('resize', function() {
-	document.querySelector('.wrapper').style.width = window.innerWidth + 'px';
-}, false);
-
 let unlock = true;
 
 const timeout = 800;
