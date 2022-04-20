@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 
                     if (isMobile.any()) {
-                        console.log('isMobile');
                         itemsMenu[i].addEventListener('click', (event) => {
                             event.preventDefault();
                         });
@@ -70,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         });
                             
                     } else {
-                        console.log('noMobile');
                         itemsMenu[i].addEventListener('mouseenter', () => {
                             switchItemsMenu(itemsMenu[i], true);
                             namesConteiner.innerHTML = name;
