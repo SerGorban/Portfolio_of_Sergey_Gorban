@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     itemsMenu[i].style.top = 50 + y + '%';
 
                     const namesConteiner = menu.querySelector('.circular-menu__name-item');
+                    const namesConteinerLink = menu.querySelector('.circular-menu__name-item a');
                     let name = '';
                     function switchItemsMenu(itemMenu, swtc) {
                         if (swtc) {
@@ -47,35 +48,35 @@ document.addEventListener('DOMContentLoaded', function() {
                             name = '';
                             namesConteiner.classList.remove('_active');
                         }
+                        namesConteinerLink.innerHTML = name;
                     }
                 
                     if (isMobile.any()) {
+                        itemsMenu[i].setAttribute('href', '#');
                         itemsMenu[i].addEventListener('click', (event) => {
                             event.preventDefault();
+
                         });
                         itemsMenu[i].addEventListener('focus', () => {
                             setTimeout(() => {
                                 switchItemsMenu(itemsMenu[i], true);
                                 let link = itemsMenu[i].getAttribute('data-link');
-                                namesConteiner.innerHTML = `<a href="${link}">${name}</a>`;
+                                namesConteinerLink.setAttribute('href', link);
                             }, 1);
                             
                         });
                         itemsMenu[i].addEventListener('blur', () => {
                             setTimeout(() => {
                                 switchItemsMenu(itemsMenu[i], false);
-                                namesConteiner.innerHTML = name;
                             }, 0);
                         });
                             
                     } else {
                         itemsMenu[i].addEventListener('mouseenter', () => {
                             switchItemsMenu(itemsMenu[i], true);
-                            namesConteiner.innerHTML = name;
                         });
                         itemsMenu[i].addEventListener('mouseleave', () => {
                             switchItemsMenu(itemsMenu[i], false);
-                            namesConteiner.innerHTML = name;
                         });
                     }
                     
