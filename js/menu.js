@@ -2,6 +2,15 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    let isMobile = {
+        Android: function() {return navigator.userAgent.match(/Android/i);},
+        BlackBerry: function() {return navigator.userAgent.match(/BlackBerry/i);},
+        iOS: function() {return navigator.userAgent.match(/iPhone|iPad|iPod/i);},
+        Opera: function() {return navigator.userAgent.match(/Opera Mini/i);},
+        Windows: function() {return navigator.userAgent.match(/IEMobile/i);},
+        any: function() {return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());}
+    };
+
     const circularMenus = document.querySelectorAll('.circular-menu');
 
     for (let menu of circularMenus) {
@@ -15,11 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const radius = 45;
 
         buttonMenu.addEventListener('click', function(event) {
-            event.preventDefault()
+            event.preventDefault();
             active = !active;
 
             if (active) {
-                buttonMenu.classList.add('circular-menu__button_active');
+                this.classList.add('circular-menu__button_active');
                 
                 for (let i = 0; i < itemsMenu.length; i++) {
                     const angle = i * arc;
@@ -30,22 +39,51 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     const namesConteiner = menu.querySelector('.circular-menu__name-item');
                     let name = '';
-
-                    namesConteiner.insertAdjacentHTML("afterbegin", name);
-
-                    itemsMenu[i].addEventListener('mouseenter', function() {
-                        name = itemsMenu[i].getAttribute('data-name').toUpperCase();
-                        namesConteiner.innerHTML = name;
-                        namesConteiner.classList.add('_active');
-                    });
-                    itemsMenu[i].addEventListener('mouseleave', function() {
-                        name = '';
-                        namesConteiner.innerHTML = name;
-                        namesConteiner.classList.remove('_active');
-                    });
+                    function switchItemsMenu(itemMenu, swtc) {
+                        if (swtc) {
+                            name = itemMenu.getAttribute('data-name').toUpperCase();
+                            namesConteiner.classList.add('_active');
+                        } else {
+                            name = '';
+                            namesConteiner.classList.remove('_active');
+                        }
+                    }
+                
+                    if (isMobile.any()) {
+                        console.log('isMobile');
+                        itemsMenu[i].addEventListener('click', (event) => {
+                            event.preventDefault();
+                        });
+                        itemsMenu[i].addEventListener('focus', () => {
+                            setTimeout(() => {
+                                switchItemsMenu(itemsMenu[i], true);
+                                let link = itemsMenu[i].getAttribute('data-link');
+                                namesConteiner.innerHTML = `<a href="${link}">${name}</a>`;
+                            }, 1);
+                            
+                        });
+                        itemsMenu[i].addEventListener('blur', () => {
+                            setTimeout(() => {
+                                switchItemsMenu(itemsMenu[i], false);
+                                namesConteiner.innerHTML = name;
+                            }, 0);
+                        });
+                            
+                    } else {
+                        console.log('noMobile');
+                        itemsMenu[i].addEventListener('mouseenter', () => {
+                            switchItemsMenu(itemsMenu[i], true);
+                            namesConteiner.innerHTML = name;
+                        });
+                        itemsMenu[i].addEventListener('mouseleave', () => {
+                            switchItemsMenu(itemsMenu[i], false);
+                            namesConteiner.innerHTML = name;
+                        });
+                    }
+                    
                 }
             } else {
-                buttonMenu.classList.remove('circular-menu__button_active')
+                this.classList.remove('circular-menu__button_active')
 
                 for (let i = 0; i < itemsMenu.length; i++) {
                     itemsMenu[i].removeAttribute('style');

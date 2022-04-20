@@ -127,11 +127,6 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-transition: 0.6s all 0s;
   transition: 0.6s all 0s;
 }
-.circular-menu__item svg {
-  width: 40px;
-  fill: #fff;
-  z-index: 2;
-}
 .circular-menu__button {
   position: absolute;
   top: 50%;
@@ -219,9 +214,11 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-transition: 0.6s all 0s;
   transition: 0.6s all 0s;
   opacity: 0;
+  visibility: hidden;
 }
 .circular-menu__name-item._active {
   opacity: 1;
+  visibility: visible;
 }
 
 .button-shell {
