@@ -3,6 +3,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
+::-webkit-scrollbar {
+	display: none;
+}
+
 body {
 	overflow-x: hidden;
 }
@@ -108,16 +112,16 @@ body.lock {
 			box-shadow: 0px 0px 6px 0px #fff;
 		}
 		& .button-shell {
-			box-shadow: 0px 0px 4px 0px #000;
+			box-shadow: 0px 0px 4px 0px rgb(10, 10, 10);;
 		}
 		&:hover .button-shell {
-			box-shadow: 0px 0px 3px 7px #000;
+			box-shadow: 0px 0px 3px 7px rgb(10, 10, 10);;
 		}
 		&_active ~ .circular-menu__item .button-shell {
-			box-shadow: 0px 0px 4px 0px #000;
+			box-shadow: 0px 0px 4px 0px rgb(10, 10, 10);;
 		}
 		&_active ~ .circular-menu__item:hover .button-shell {
-			box-shadow: 0px 0px 3px 7px #000;
+			box-shadow: 0px 0px 3px 7px rgb(10, 10, 10);;
 		}
 	}
 	&__name-item {
@@ -147,8 +151,8 @@ body.lock {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	border: 2px solid #000;
-	background-color: #000;
+	border: 2px solid rgb(10, 10, 10);
+	background: rgb(10, 10, 10);
 	border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
 	transition: 0.6s all 0s;
 }
@@ -170,7 +174,7 @@ body.lock {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	padding: 25px 15px;
+	padding: 15px;
 	background: rgba($color: #fff, $alpha: 0.3);
 	z-index: 5;
 	opacity: 0;
@@ -179,14 +183,15 @@ body.lock {
 		width: 100%;
 		height: 100%;
 		background: rgba($color: #000, $alpha: 0.7);
-		overflow-y: auto;
-    	overflow-x: hidden;
 	}
-	&__content {
+	&__wrapper {
+		display: grid;
+		grid-template-rows: minmax(70px, 100px) 1fr;
 		position: relative;
 		width: 100%;
 		height: 100%;
 		padding: 10px;
+		overflow: hidden;
 	}
 	&__close {
 		position: absolute;
@@ -227,12 +232,77 @@ body.lock {
 			box-shadow: 0px 0px 6px 0px #fff;
 		}
 	}
+	&__title {
+		width: 100%;
+		display: grid;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		text-transform: uppercase;
+		font-family: 'Permanent Marker';
+		font-size: 40px;
+		font-weight: 600;
+		text-shadow: 0px 0px 8px #fff;
+	}
+	&__content {
+		width: 100%;
+		overflow-y: auto;
+    	overflow-x: hidden;
+	}
 	&.open-popup {
 		opacity: 1;
 		visibility: visible;
 	}
 }
-
+.project-card-gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 10px;
+	&__item {
+		position: relative;
+		display: grid;
+		grid-template-rows: 200px 1fr;
+		border-radius: 10px;
+		overflow: hidden;
+		background: #444;
+		&::after {
+			content:'';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			box-shadow: inset 0px 0px 20px 3px #000;
+		}
+	}
+	&__img {
+		height: 200px;
+		background: #333;
+	}
+	&__description {
+		display: grid;
+		grid-template-rows: 1fr 1fr 1fr; 
+		padding: 10px;
+		& div:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__title,
+	&__category,
+	&__date {
+		margin: 10px 0;
+		//font-family: ;
+		font-size: 18px;
+		font-weight: 600;
+	}
+	&__field-name {
+		color: #fff;
+		margin-right: 10px;
+	}
+	&__field-value {
+		color: #fff;
+	}
+}
 @keyframes button-shell_animate {
     0%{transform: rotate(0deg);}
     100%{transform: rotate(360deg);}
