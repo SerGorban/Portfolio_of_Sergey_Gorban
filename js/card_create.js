@@ -51,6 +51,7 @@ async function getCardsData(source, insertSection) {
         }
     } else {
         let messageIfNotFound = "There are not works in this category yet...";
+        // код если нет работ
     }
 }
 

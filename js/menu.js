@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 for (let i = 0; i < itemsMenu.length; i++) {
                     const angle = i * arc;
-                    const x = radius * Math.cos(angle);
-                    const y = radius * Math.sin(angle);
+                    const x = radius * -Math.cos(angle);
+                    const y = radius * -Math.sin(angle);
                     itemsMenu[i].style.left = 50 + x + '%';
                     itemsMenu[i].style.top = 50 + y + '%';
 
