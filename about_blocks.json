@@ -1,0 +1,14 @@
+[
+    {
+        "name": "item1",
+        "iconClass": "icon-about-me"
+    },
+    {
+        "name": "item2",
+        "iconClass": "icon-about-me"
+    },
+    {
+        "name": "item3",
+        "iconClass": "icon-about-me"
+    }
+]

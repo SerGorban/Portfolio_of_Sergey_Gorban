@@ -76,6 +76,26 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 
+.system-message {
+  margin: 30vh auto;
+  text-align: center;
+  font-family: "Permanent Marker";
+  font-size: 24px;
+  font-weight: 600;
+  text-shadow: 0px 0px 6px #fff;
+}
+
+.loader__circle {
+  margin: 10px auto;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 6px solid #000;
+  border-color: #000 transparent #000 transparent;
+  -webkit-animation: rotateing 1.2s linear infinite;
+          animation: rotateing 1.2s linear infinite;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -261,19 +281,19 @@ body.lock {
 }
 
 .button-shell_1 {
-  -webkit-animation: button-shell_animate 6s linear infinite;
-          animation: button-shell_animate 6s linear infinite;
+  -webkit-animation: rotateing 6s linear infinite;
+          animation: rotateing 6s linear infinite;
 }
 
 .button-shell_2 {
   content: "";
-  animation: button-shell_animate 4s linear infinite reverse;
+  animation: rotateing 4s linear infinite reverse;
 }
 
 .button-shell_3 {
   content: "";
-  -webkit-animation: button-shell_animate 10s linear infinite;
-          animation: button-shell_animate 10s linear infinite;
+  -webkit-animation: rotateing 10s linear infinite;
+          animation: rotateing 10s linear infinite;
 }
 
 .popup {
@@ -437,8 +457,8 @@ body.lock {
   border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
   -webkit-transform-origin: center;
           transform-origin: center;
-  -webkit-animation: button-shell_animate 10s linear infinite;
-          animation: button-shell_animate 10s linear infinite;
+  -webkit-animation: rotateing 10s linear infinite;
+          animation: rotateing 10s linear infinite;
   z-index: 2;
 }
 .about-menu__axix::before, .about-menu__axix::after {
@@ -453,11 +473,11 @@ body.lock {
   z-index: -1;
 }
 .about-menu__axix::before {
-  animation: button-shell_animate 6s linear infinite reverse;
+  animation: rotateing 6s linear infinite reverse;
 }
 .about-menu__axix::after {
-  -webkit-animation: button-shell_animate 8s linear infinite;
-          animation: button-shell_animate 8s linear infinite;
+  -webkit-animation: rotateing 8s linear infinite;
+          animation: rotateing 8s linear infinite;
 }
 .about-menu__item {
   position: absolute;
@@ -612,7 +632,6 @@ body.lock {
   padding: 0 20px;
 }
 .project-card-gallery__conteiner {
-  max-width: 400px;
   -webkit-perspective: 1000px;
           perspective: 1000px;
   -webkit-perspective-origin: center;
@@ -651,6 +670,12 @@ body.lock {
   height: 200px;
   background: #333;
   overflow: hidden;
+}
+.project-card-gallery__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .project-card-gallery__description {
   display: -ms-grid;
@@ -743,7 +768,7 @@ body.lock {
   transition: 0.4s all 0s;
 }
 
-@-webkit-keyframes button-shell_animate {
+@-webkit-keyframes rotateing {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -754,7 +779,7 @@ body.lock {
   }
 }
 
-@keyframes button-shell_animate {
+@keyframes rotateing {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);

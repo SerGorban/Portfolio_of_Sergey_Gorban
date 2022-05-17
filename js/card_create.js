@@ -1,5 +1,60 @@
+/* // links of data about projects
 const sourceEducationalProjects = '../educational_projects.json';
 const sourceCommercialProjects = '../commercial_projects.json';
+*/
+// array of objects(data about projects for github)
+const sourceEducationalProjects = [
+    {
+        cardLink: "#",
+        dataRotateCoefficient: 7,
+        imgSRC: "https://www.meme-arsenal.com/memes/83ec4738457d3a469b297fd3c679096f.jpg",
+        title: "Test",
+        category: "Test",
+        creationDate: "02.05.2022"
+    },
+    {
+        cardLink: "#",
+        dataRotateCoefficient: 7,
+        imgSRC: "https://www.meme-arsenal.com/memes/83ec4738457d3a469b297fd3c679096f.jpg",
+        title: "Test2",
+        category: "Test2",
+        creationDate: "02.05.2022"
+    },
+    {
+        cardLink: "#",
+        dataRotateCoefficient: 7,
+        imgSRC: "https://www.meme-arsenal.com/memes/83ec4738457d3a469b297fd3c679096f.jpg",
+        title: "Test",
+        category: "Test",
+        creationDate: "02.05.2022"
+    },
+    {
+        cardLink: "#",
+        dataRotateCoefficient: 7,
+        imgSRC: "https://www.meme-arsenal.com/memes/83ec4738457d3a469b297fd3c679096f.jpg",
+        title: "Test",
+        category: "Test",
+        creationDate: "02.05.2022"
+    },
+    {
+        cardLink: "#",
+        dataRotateCoefficient: 7,
+        imgSRC: "https://www.meme-arsenal.com/memes/83ec4738457d3a469b297fd3c679096f.jpg",
+        title: "Test",
+        category: "Test",
+        creationDate: "02.05.2022"
+    },
+    {
+        cardLink: "#",
+        dataRotateCoefficient: 7,
+        imgSRC: "https://www.meme-arsenal.com/memes/83ec4738457d3a469b297fd3c679096f.jpg",
+        title: "Test",
+        category: "Test",
+        creationDate: "02.05.2022"
+    }
+];
+const sourceCommercialProjects = [];
+
 const galleryEducationalProjects = document.getElementById('educational-projects').querySelector('.project-card-gallery');;
 const galleryCommercialProjects = document.getElementById('commercial-projects').querySelector('.project-card-gallery');;
 
@@ -38,22 +93,64 @@ class Card {
         insertSection.insertAdjacentElement("beforeend", newElem);
     }
 }
-async function getCardsData(source, insertSection) {
-    let response = await fetch(source, {
-        method: 'GET'
-    });
-    if (response.ok) {
-        const result = await response.json();
 
-        for (let card of result) {
+// function to create cards from array without ajax(for github)
+function getCardsData(arr, insertSection) {
+    //loader
+    insertSection.innerHTML = 
+    `<div class="loader system-message">
+        <div class="loader__circle"></div>
+        <div class="loader__text">loading...</div>
+    </div>`;
+    //
+    if (arr.length) {
+        insertSection.innerHTML = ``;
+        for (let card of arr) {
             card = new Card(card);
             card.insert(insertSection);
         }
     } else {
-        let messageIfNotFound = "There are not works in this category yet...";
-        // код если нет работ
+        insertSection.innerHTML = 
+        `<div class="system-message">
+            There are not works in this category yet...
+        </div>`;
     }
 }
+/*
+// function to receive and create cards from data db with ajax
+async function getCardsData(source, insertSection) {
+    //loader
+    insertSection.innerHTML = 
+    `<div class="loader system-message">
+        <div class="loader__circle"></div>
+        <div class="loader__text">loading...</div>
+    </div>`;
+    //
+    let response = await fetch(source, {
+        method: 'GET'
+    });
+
+    if (response.ok) {
+        const result = await response.json();
+        if (result.length) {
+            insertSection.innerHTML = ``;
+            for (let card of result) {
+                card = new Card(card);
+                card.insert(insertSection);
+            }
+        } else {
+            insertSection.innerHTML = 
+            `<div class="system-message">
+                There are not works in this category yet...
+            </div>`;
+        }
+    } else {
+        insertSection.innerHTML = 
+            `<div class="system-message">
+                loading error...
+            </div>`;
+    }
+} */
 
 getCardsData(sourceEducationalProjects, galleryEducationalProjects);
 getCardsData(sourceCommercialProjects, galleryCommercialProjects);
