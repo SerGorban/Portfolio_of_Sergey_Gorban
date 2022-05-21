@@ -31,7 +31,23 @@ class ContentContainerAbaut {
     }
 }
 
-const sourceAbout = '../about_blocks.json';
+//
+//const sourceAbout = '../about_blocks.json';
+
+const sourceAbout = [
+    {
+        name: "item1",
+        iconClass: "icon-about-me"
+    },
+    {
+        name: "item2",
+        iconClass: "icon-about-me"
+    },
+    {
+        name: "item3",
+        iconClass: "icon-about-me"
+    }
+];
 
 const popupAbout = document.querySelector('.popup_about');
 if (popupAbout) {
@@ -59,6 +75,23 @@ if (popupAbout) {
         
 }
 
+//
+async function getAndCreateAboutBlocks(arr, insertSectionMenu, insertSectionContent) {
+    if (arr.length) {
+        for (let i = 0; i < arr.length; i++) {
+            let menuItem = new ItemMenuAbaut(arr[i], i);
+            menuItem.insert(insertSectionMenu);
+
+            let contentContainer = new ContentContainerAbaut(arr[i], i);
+            contentContainer.insert(insertSectionContent);
+        }    
+    } else {
+
+    }
+}
+
+//
+/*
 async function getAndCreateAboutBlocks(source, insertSectionMenu, insertSectionContent) {
 
     let response = await fetch(source, {
@@ -84,6 +117,7 @@ async function getAndCreateAboutBlocks(source, insertSectionMenu, insertSectionC
 
     }
 }
+*/
 
 function aboutMenuSwitchContent() {
     const menuConteiner = document.querySelector('.about-menu__conteiner');
