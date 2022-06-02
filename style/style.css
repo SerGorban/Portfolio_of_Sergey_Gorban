@@ -433,6 +433,8 @@ body.lock {
       align-self: center;
   height: 400px;
   position: relative;
+  -webkit-transition: 0.6s all 0s;
+  transition: 0.6s all 0s;
 }
 .about-menu__conteiner {
   position: absolute;
@@ -457,6 +459,8 @@ body.lock {
   border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
   -webkit-transform-origin: center;
           transform-origin: center;
+  -webkit-transition: 0.6s all 0s;
+  transition: 0.6s all 0s;
   -webkit-animation: rotateing 10s linear infinite;
           animation: rotateing 10s linear infinite;
   z-index: 2;
@@ -518,6 +522,8 @@ body.lock {
   width: 50px;
   height: 100%;
   z-index: 1;
+  -webkit-transition: 0.6s all 0s;
+  transition: 0.6s all 0s;
 }
 .about-menu__control-buttons_clockwise, .about-menu__control-buttons_counter-clockwise {
   position: absolute;
@@ -534,7 +540,7 @@ body.lock {
   height: 16px;
   border-radius: 50%;
   background-color: #fff;
-  opacity: 0.8;
+  opacity: 0.9;
   -webkit-transition: 0.6s all 0s;
   transition: 0.6s all 0s;
 }
@@ -594,6 +600,82 @@ body.lock {
           transform: rotate(90deg);
   bottom: -7px;
 }
+.about-menu__control-buttons_close-button {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -50px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: transparent;
+}
+.about-menu__control-buttons_close-button span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 40px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: #fff;
+  opacity: 0.9;
+  -webkit-transition: 0.6s all 0s;
+  transition: 0.6s all 0s;
+}
+.about-menu__control-buttons_close-button span::before, .about-menu__control-buttons_close-button span::after {
+  content: "";
+  position: absolute;
+  right: -9px;
+  width: 30px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: #fff;
+  opacity: 0.9;
+  -webkit-transition: 0.6s all 0s;
+  transition: 0.6s all 0s;
+}
+.about-menu__control-buttons_close-button span::before {
+  top: 9px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.about-menu__control-buttons_close-button span::after {
+  top: -9px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.about-menu__control-buttons_close-button:hover span, .about-menu__control-buttons_close-button:hover span::before, .about-menu__control-buttons_close-button:hover span::after {
+  opacity: 1;
+  -webkit-box-shadow: 0px 0px 6px 0px #fff;
+          box-shadow: 0px 0px 6px 0px #fff;
+}
+.about-menu._close {
+  -ms-flex-preferred-size: 50px;
+      flex-basis: 50px;
+}
+.about-menu._close .about-menu__conteiner, .about-menu._close .about-menu__axix {
+  right: -500px;
+}
+.about-menu._close .about-menu__control-buttons {
+  right: 0px;
+}
+.about-menu._close .about-menu__control-buttons_close-button span::before, .about-menu._close .about-menu__control-buttons_close-button span::after {
+  right: 0px;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  width: 40px;
+}
+.about-menu._close .about-menu__control-buttons_close-button span::before {
+  top: 12px;
+}
+.about-menu._close .about-menu__control-buttons_close-button span::after {
+  top: -12px;
+}
 .about-content {
   -ms-flex-preferred-size: 400px;
       flex-basis: 400px;
@@ -622,6 +704,59 @@ body.lock {
   visibility: visible;
   overflow: auto;
   height: auto;
+}
+.about-greeting {
+  width: 100%;
+  min-height: 80vh;
+  margin: 0 50px 0 0;
+  background: url("../img/flag_for_about.png") 100%/contain no-repeat;
+}
+.about-greeting__content {
+  width: 100%;
+  padding: 15px 0;
+}
+.about-greeting__greeting {
+  position: relative;
+  max-width: 500px;
+  margin: 10vw 20px 0 80px;
+  -webkit-perspective: 400px;
+          perspective: 400px;
+}
+.about-greeting__greeting span {
+  display: block;
+  font-size: 40px;
+  font-weight: 500;
+  color: #fff;
+  -webkit-transform: rotateY(20deg) rotateX(-20deg);
+          transform: rotateY(20deg) rotateX(-20deg);
+}
+.about-greeting__greeting span::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -6px;
+  width: 30px;
+  height: 30px;
+  border: solid 4px #fff;
+  border-color: #fff transparent transparent #fff;
+}
+.about-greeting__greeting span::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  right: -6px;
+  width: 30px;
+  height: 30px;
+  border: solid 4px #fff;
+  border-color: transparent #fff #fff transparent;
+}
+.about-greeting__about-me {
+  max-width: 600px;
+  margin: 5vw 20px 0 20px;
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+  text-align: justify;
 }
 
 .project-card-gallery {
@@ -801,8 +936,21 @@ body.lock {
         -ms-flex-positive: 1;
             flex-grow: 1;
   }
+  .about-menu__control-buttons_close-button {
+    display: none;
+  }
   .about-content {
     height: auto;
     overflow: visible;
+  }
+  .about-greeting__greeting {
+    margin: 10vw 20px 0 20px;
+  }
+  .about-greeting__greeting span {
+    -webkit-transform: rotateY(0deg) rotateX(0deg);
+            transform: rotateY(0deg) rotateX(0deg);
+  }
+  .about-greeting__greeting span::before, .about-greeting__greeting span::after {
+    display: none;
   }
 }

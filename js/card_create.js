@@ -6,7 +6,7 @@ const sourceCommercialProjects = '../commercial_projects.json';
 const sourceEducationalProjects = [
     {
         cardLink: "#",
-        dataRotateCoefficient: 7,
+        dataRotateCoefficient: 10,
         imgSRC: "https://www.meme-arsenal.com/memes/83ec4738457d3a469b297fd3c679096f.jpg",
         title: "Test",
         category: "Test",
@@ -14,7 +14,7 @@ const sourceEducationalProjects = [
     },
     {
         cardLink: "#",
-        dataRotateCoefficient: 7,
+        dataRotateCoefficient: 10,
         imgSRC: "https://www.meme-arsenal.com/memes/83ec4738457d3a469b297fd3c679096f.jpg",
         title: "Test2",
         category: "Test2",
@@ -22,7 +22,7 @@ const sourceEducationalProjects = [
     },
     {
         cardLink: "#",
-        dataRotateCoefficient: 7,
+        dataRotateCoefficient: 10,
         imgSRC: "https://www.meme-arsenal.com/memes/83ec4738457d3a469b297fd3c679096f.jpg",
         title: "Test",
         category: "Test",
@@ -30,7 +30,7 @@ const sourceEducationalProjects = [
     },
     {
         cardLink: "#",
-        dataRotateCoefficient: 7,
+        dataRotateCoefficient: 10,
         imgSRC: "https://www.meme-arsenal.com/memes/83ec4738457d3a469b297fd3c679096f.jpg",
         title: "Test",
         category: "Test",
@@ -38,7 +38,7 @@ const sourceEducationalProjects = [
     },
     {
         cardLink: "#",
-        dataRotateCoefficient: 7,
+        dataRotateCoefficient: 10,
         imgSRC: "https://www.meme-arsenal.com/memes/83ec4738457d3a469b297fd3c679096f.jpg",
         title: "Test",
         category: "Test",
@@ -46,7 +46,7 @@ const sourceEducationalProjects = [
     },
     {
         cardLink: "#",
-        dataRotateCoefficient: 7,
+        dataRotateCoefficient: 10,
         imgSRC: "https://www.meme-arsenal.com/memes/83ec4738457d3a469b297fd3c679096f.jpg",
         title: "Test",
         category: "Test",

@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function init() {
         particlesArray = [];
         let numberOfParticles = (canvas.height * canvas.width) / 9000;
-        for (let i = 0; i < numberOfParticles*1.2; i++) {
+        for (let i = 0; i < numberOfParticles; i++) {
             let size = (Math.random() * 4) + 3;
             let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
             let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);

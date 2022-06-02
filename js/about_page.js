@@ -1,3 +1,6 @@
+import { aboutGreetingContent } from '/js/about_contents/about_greeting.js';
+import { aboutSkillsContent } from '/js/about_contents/about_skills.js';
+
 class ItemMenuAbaut {
     constructor(itemData, indexNumber) {
         this.name = itemData.name;
@@ -9,7 +12,7 @@ class ItemMenuAbaut {
         newElem.classList.add('about-menu__item', `about-menu__item_${this.indexNumber}`);
         newElem.setAttribute('data-content-block', this.name);
         newElem.innerHTML = 
-            `<span class="about-menu__item_icon ${this.icon}">${this.indexNumber}</span>
+            `<span class="about-menu__item_icon ${this.icon}"></span>
             <span class="button-shell button-shell_1"></span>
             <span class="button-shell button-shell_2"></span>
             <span class="button-shell button-shell_3"></span>`;
@@ -26,7 +29,7 @@ class ContentContainerAbaut {
         let newElem = document.createElement('div');
         newElem.classList.add('about-content__conteiner');
         newElem.setAttribute('id', this.name);
-        newElem.innerHTML = `about-content__conteiner_${this.indexNumber}`;
+        //newElem.innerHTML = `about-content__conteiner_${this.indexNumber}`;
         insertSection.insertAdjacentElement("beforeend", newElem);
     }
 }
@@ -36,11 +39,11 @@ class ContentContainerAbaut {
 
 const sourceAbout = [
     {
-        name: "item1",
+        name: "about-greeting",
         iconClass: "icon-about-me"
     },
     {
-        name: "item2",
+        name: "about-skills",
         iconClass: "icon-about-me"
     },
     {
@@ -63,6 +66,7 @@ if (popupAbout) {
     
                 </div>
                 <div class="about-menu__control-buttons">
+                    <button class="about-menu__control-buttons_close-button"><span></span></button>
                     <button class="about-menu__control-buttons_clockwise"><span></span></button>
                     <button class="about-menu__control-buttons_counter-clockwise"><span></span></button>
                 </div>
@@ -71,8 +75,11 @@ if (popupAbout) {
 
     const menuSection = popupAboutContent.querySelector('.about-menu__conteiner');
     const contentSection = popupAboutContent.querySelector('.about-content');
-    getAndCreateAboutBlocks(sourceAbout, menuSection, contentSection).then(aboutMenuSwitchContent);
-        
+    getAndCreateAboutBlocks(sourceAbout, menuSection, contentSection).then(function() {
+        aboutMenuSwitchContent();
+        closeAboutMenu();
+        addContentBlocks();
+    });      
 }
 
 //
@@ -107,9 +114,7 @@ async function getAndCreateAboutBlocks(source, insertSectionMenu, insertSectionC
 
                 let contentContainer = new ContentContainerAbaut(result[i], i);
                 contentContainer.insert(insertSectionContent);
-            }
-
-            
+            }   
         } else {
 
         }
@@ -174,5 +179,16 @@ function aboutMenuSwitchContent() {
     }
     
     contentActive();
+}
+
+function closeAboutMenu() {
+    const menu = document.querySelector('.about-menu');
+    const closeMenuButton = document.querySelector('.about-menu__control-buttons_close-button');
+    closeMenuButton.addEventListener("click", () => {menu.classList.toggle('_close')});
+}
+
+function addContentBlocks() {
+    aboutGreetingContent();
+    aboutSkillsContent();
 }
 
