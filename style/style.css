@@ -223,20 +223,20 @@ body.lock {
           box-shadow: 0px 0px 6px 0px #fff;
 }
 .circular-menu__button .button-shell {
-  -webkit-box-shadow: 0px 0px 4px 0px #0a0a0a;
-          box-shadow: 0px 0px 4px 0px #0a0a0a;
+  -webkit-box-shadow: 0px 0px 4px 0px #111111;
+          box-shadow: 0px 0px 4px 0px #111111;
 }
 .circular-menu__button:hover .button-shell {
-  -webkit-box-shadow: 0px 0px 3px 7px #0a0a0a;
-          box-shadow: 0px 0px 3px 7px #0a0a0a;
+  -webkit-box-shadow: 0px 0px 3px 7px #111111;
+          box-shadow: 0px 0px 3px 7px #111111;
 }
 .circular-menu__button_active ~ .circular-menu__item .button-shell {
-  -webkit-box-shadow: 0px 0px 4px 0px #0a0a0a;
-          box-shadow: 0px 0px 4px 0px #0a0a0a;
+  -webkit-box-shadow: 0px 0px 4px 0px #111111;
+          box-shadow: 0px 0px 4px 0px #111111;
 }
 .circular-menu__button_active ~ .circular-menu__item:hover .button-shell {
-  -webkit-box-shadow: 0px 0px 3px 7px #0a0a0a;
-          box-shadow: 0px 0px 3px 7px #0a0a0a;
+  -webkit-box-shadow: 0px 0px 3px 7px #111111;
+          box-shadow: 0px 0px 3px 7px #111111;
 }
 .circular-menu__button_active ~ .circular-menu__item .circular-menu__item_icon {
   color: #fff;
@@ -273,8 +273,8 @@ body.lock {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 2px solid #0a0a0a;
-  background: #0a0a0a;
+  border: 2px solid #111111;
+  background: #111111;
   border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
   -webkit-transition: 0.6s all 0s;
   transition: 0.6s all 0s;
@@ -315,6 +315,8 @@ body.lock {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
 .popup__wrapper {
   display: -ms-grid;
@@ -386,7 +388,7 @@ body.lock {
   font-size: 40px;
   font-weight: 600;
   text-shadow: 0px 0px 8px #fff;
-  z-index: 3;
+  z-index: 9;
 }
 .popup__title::after {
   content: "";
@@ -404,10 +406,8 @@ body.lock {
 }
 .popup__content {
   width: 100%;
-  padding-top: 20px;
   border-radius: 10px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .popup.open-popup {
   opacity: 1;
@@ -693,6 +693,7 @@ body.lock {
   left: 0;
   width: 100%;
   height: 0;
+  padding-top: 20px;
   overflow: hidden;
   opacity: 0;
   visibility: hidden;
@@ -718,45 +719,166 @@ body.lock {
 .about-greeting__greeting {
   position: relative;
   max-width: 500px;
-  margin: 10vw 20px 0 80px;
+  margin: 10vw 20px 0 20px;
   -webkit-perspective: 400px;
           perspective: 400px;
 }
-.about-greeting__greeting span {
+.about-greeting__greeting p {
   display: block;
   font-size: 40px;
   font-weight: 500;
   color: #fff;
-  -webkit-transform: rotateY(20deg) rotateX(-20deg);
-          transform: rotateY(20deg) rotateX(-20deg);
+  -webkit-transform: rotateY(20deg) rotateX(-20deg) translateX(45px);
+          transform: rotateY(20deg) rotateX(-20deg) translateX(45px);
 }
-.about-greeting__greeting span::before {
+.about-greeting__greeting p::before {
   content: "";
   position: absolute;
-  top: -3px;
-  left: -6px;
+  top: -5px;
+  left: -10px;
   width: 30px;
   height: 30px;
   border: solid 4px #fff;
   border-color: #fff transparent transparent #fff;
 }
-.about-greeting__greeting span::after {
+.about-greeting__greeting p::after {
   content: "";
   position: absolute;
-  bottom: -3px;
-  right: -6px;
+  bottom: -5px;
+  right: -10px;
   width: 30px;
   height: 30px;
   border: solid 4px #fff;
   border-color: transparent #fff #fff transparent;
 }
 .about-greeting__about-me {
+  position: relative;
   max-width: 600px;
   margin: 5vw 20px 0 20px;
-  font-size: 30px;
+  -webkit-perspective: 400px;
+          perspective: 400px;
+}
+.about-greeting__about-me p {
+  display: block;
+  font-size: 28px;
   font-weight: 500;
   color: #fff;
   text-align: justify;
+  -webkit-transform: rotateY(-8deg) rotateX(8deg) translateX(-30px);
+          transform: rotateY(-8deg) rotateX(8deg) translateX(-30px);
+}
+.about-greeting__about-me p::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  width: 30px;
+  height: 30px;
+  border: solid 4px #fff;
+  border-color: #fff #fff transparent transparent;
+}
+.about-greeting__about-me p::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: -10px;
+  width: 30px;
+  height: 30px;
+  border: solid 4px #fff;
+  border-color: transparent transparent #fff #fff;
+}
+
+.skill {
+  margin: 0 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.skill:nth-child(2n) {
+  margin-left: 25%;
+}
+.skill__name {
+  margin-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.skill__name span {
+  font-size: 36px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.diagram {
+  padding: 20px;
+}
+.diagram__conteiner {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #666;
+  margin: 0 auto;
+}
+.diagram__start-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.diagram__end-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.diagram__shield {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #666), color-stop(50%, transparent));
+  background: linear-gradient(to right, #666 50%, transparent 50%);
+}
+.diagram__value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background-color: #777;
+  -webkit-box-shadow: inset 0px 0px 15px 15px #666;
+          box-shadow: inset 0px 0px 15px 15px #666;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.diagram__value span {
+  font-size: 36px;
+  font-weight: 500;
+  font-family: "Permanent Marker";
+  color: #111;
 }
 
 .project-card-gallery {
@@ -764,7 +886,9 @@ body.lock {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 10px;
-  padding: 0 20px;
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
 }
 .project-card-gallery__conteiner {
   -webkit-perspective: 1000px;
@@ -926,7 +1050,8 @@ body.lock {
 }
 @media screen and (max-width: 800px) {
   .about {
-    height: auto;
+    height: 100%;
+    overflow-y: auto;
   }
   .about-menu {
     -ms-flex-item-align: center;
@@ -943,14 +1068,19 @@ body.lock {
     height: auto;
     overflow: visible;
   }
-  .about-greeting__greeting {
-    margin: 10vw 20px 0 20px;
+  .about-greeting__greeting p, .about-greeting__about-me p {
+    -webkit-transform: rotateY(0deg) rotateX(0deg) translateX(0px);
+            transform: rotateY(0deg) rotateX(0deg) translateX(0px);
   }
-  .about-greeting__greeting span {
-    -webkit-transform: rotateY(0deg) rotateX(0deg);
-            transform: rotateY(0deg) rotateX(0deg);
-  }
-  .about-greeting__greeting span::before, .about-greeting__greeting span::after {
+  .about-greeting__greeting p::before, .about-greeting__greeting p::after, .about-greeting__about-me p::before, .about-greeting__about-me p::after {
     display: none;
+  }
+
+  .skill {
+    display: block;
+  }
+  .skill:nth-child(2n) {
+    margin-left: 25px;
+    margin-bottom: 30px;
   }
 }

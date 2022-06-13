@@ -140,16 +140,16 @@ body.lock {
 			box-shadow: 0px 0px 6px 0px #fff;
 		}
 		& .button-shell {
-			box-shadow: 0px 0px 4px 0px rgb(10, 10, 10);
+			box-shadow: 0px 0px 4px 0px rgb(17, 17, 17);
 		}
 		&:hover .button-shell {
-			box-shadow: 0px 0px 3px 7px rgb(10, 10, 10);
+			box-shadow: 0px 0px 3px 7px rgb(17, 17, 17);
 		}
 		&_active ~ .circular-menu__item .button-shell {
-			box-shadow: 0px 0px 4px 0px rgb(10, 10, 10);
+			box-shadow: 0px 0px 4px 0px rgb(17, 17, 17);
 		}
 		&_active ~ .circular-menu__item:hover .button-shell {
-			box-shadow: 0px 0px 3px 7px rgb(10, 10, 10);
+			box-shadow: 0px 0px 3px 7px rgb(17, 17, 17);
 		}
 		&_active ~ .circular-menu__item .circular-menu__item_icon {
 			color: #fff;
@@ -185,8 +185,9 @@ body.lock {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	border: 2px solid rgb(10, 10, 10);
-	background: rgb(10, 10, 10);
+	border: 2px solid rgb(17, 17, 17);
+	//background: rgb(10, 10, 10);
+	background: rgb(17, 17, 17);
 	border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
 	transition: 0.6s all 0s;
 }
@@ -219,6 +220,7 @@ body.lock {
 		width: 100%;
 		height: 100%;
 		background: rgba($color: #000, $alpha: 0.7);
+		backdrop-filter: blur(5px);
 	}
 	&__wrapper {
 		display: grid;
@@ -282,7 +284,7 @@ body.lock {
 		font-size: 40px;
 		font-weight: 600;
 		text-shadow: 0px 0px 8px #fff;
-		z-index: 3;
+		z-index: 9;
 		&::after {
 			content:'';
 			width: 98%;
@@ -298,10 +300,9 @@ body.lock {
 	}
 	&__content {
 		width: 100%;
-		padding-top: 20px;
+		//padding-top: 20px;
 		border-radius: 10px;
-		overflow-y: auto;
-    	overflow-x: hidden;
+		overflow: hidden;
 	}
 	&.open-popup {
 		opacity: 1;
@@ -557,6 +558,7 @@ body.lock {
 			left: 0;
 			width: 100%;
 			height: 0;
+			padding-top: 20px;
 			overflow: hidden;
 			opacity: 0;
 			visibility: hidden;
@@ -581,20 +583,20 @@ body.lock {
 		&__greeting {
 			position: relative;
 			max-width: 500px;
-			margin: 10vw 20px 0 80px;
+			margin: 10vw 20px 0 20px;
 			perspective: 400px;
-			& span {
+			& p {
 				display: block;
 				font-size: 40px;
 				font-weight: 500;
 				//font-family: ;
 				color:#fff;
-				transform: rotateY(20deg) rotateX(-20deg);
+				transform: rotateY(20deg) rotateX(-20deg) translateX(45px);
 				&::before {
 					content:"";
 					position: absolute;
-					top: -3px;
-					left: -6px;
+					top: -5px;
+					left: -10px;
 					width: 30px;
 					height: 30px;
 					border: solid 4px #fff;
@@ -603,8 +605,8 @@ body.lock {
 				&::after {
 					content:"";
 					position: absolute;
-					bottom: -3px;
-					right: -6px;
+					bottom: -5px;
+					right: -10px;
 					width: 30px;
 					height: 30px;
 					border: solid 4px #fff;
@@ -613,21 +615,128 @@ body.lock {
 			}
 		}
 		&__about-me {
+			position: relative;
 			max-width: 600px;
 			margin: 5vw 20px 0 20px;
-			font-size: 30px;
-			font-weight: 500;
-			//font-family: ;
-			color:#fff;
-			text-align: justify;
+			perspective: 400px;
+			& p {
+				display: block;
+				font-size: 28px;
+				font-weight: 500;
+				//font-family: ;
+				color:#fff;
+				text-align: justify;
+				transform: rotateY(-8deg) rotateX(8deg) translateX(-30px);
+				&::before {
+					content:"";
+					position: absolute;
+					top: -5px;
+					right: -10px;
+					width: 30px;
+					height: 30px;
+					border: solid 4px #fff;
+					border-color: #fff #fff transparent transparent;
+				}
+				&::after {
+					content:"";
+					position: absolute;
+					bottom: -5px;
+					left: -10px;
+					width: 30px;
+					height: 30px;
+					border: solid 4px #fff;
+					border-color: transparent transparent #fff #fff;
+				}
+			}
 		}
 	}
 }
+
+.skill {
+	margin: 0 25px;
+	display: flex;
+	&:nth-child(2n) {
+		margin-left: 25%;
+	}
+	&__diagram {
+	}
+	&__name {
+		margin-bottom: 15px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		& span {
+			font-size: 36px;
+			font-weight: 500;
+			//font-family: ;
+			color:#fff;
+		}
+	}
+}
+.diagram {
+	padding: 20px;
+	&__conteiner {
+		position: relative;
+		width: 180px;
+		height: 180px;
+		border-radius: 50%;
+		background: #666;
+		margin: 0 auto;
+	}
+	&__start-line {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+	}
+	&__end-line {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+	}
+	&__shield {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		background: linear-gradient(to right, #666 50%, transparent 50%);
+	}
+	&__value {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 80%;
+		height: 80%;
+		border-radius: 50%;
+		background-color: #777;
+		box-shadow: inset 0px 0px 15px 15px #666;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		& span {
+			font-size: 36px;
+			font-weight: 500;
+			font-family: 'Permanent Marker';
+			color:#111;
+		}
+	}
+}
+
 .project-card-gallery {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: 10px;
-	padding: 0 20px;
+	padding: 20px;
+	height: 100%;
+	overflow-y: auto;
 	&__conteiner {
 		//max-width: 400px;
 		perspective: 1000px;
@@ -745,7 +854,8 @@ body.lock {
 
 @media screen and (max-width: 800px){
 	.about {
-		height: auto;
+		height: 100%;
+		overflow-y: auto;
 		&-menu {
 			align-self: center;
 			flex-grow: 1;
@@ -757,15 +867,23 @@ body.lock {
 			height: auto;
 			overflow: visible;
 		}
-		&-greeting__greeting {
-			margin: 10vw 20px 0 20px;
-			& span {
-				transform: rotateY(0deg) rotateX(0deg);
+		&-greeting {
+			&__greeting p,
+			&__about-me p {
+				transform: rotateY(0deg) rotateX(0deg) translateX(0px);
 				&::before,
-				&::after{
+				&::after {
 					display: none;
 				}
 			}
+		}
+	}
+
+	.skill {
+		display: block;
+		&:nth-child(2n) {
+			margin-left: 25px;
+			margin-bottom: 30px;
 		}
 	}
 }

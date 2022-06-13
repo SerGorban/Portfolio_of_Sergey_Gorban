@@ -4,12 +4,14 @@ function aboutGreetingContent() {
         `<div class="about-greeting">
             <div class="about-greeting__content">
                 <div class="about-greeting__greeting">
-                    <span>
+                    <p>
                         Hi! I am a front-end developer based in Nikolaev, Ukraine.
-                    </span>
+                    </p>
                 </div>
                 <div class="about-greeting__about-me">
-                    Since the beginning of 2021, I've enjoyed ... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    <p>
+                        Since the beginning of 2021, I've enjoyed ... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
                 </div>
             </div>
         </div>`;
