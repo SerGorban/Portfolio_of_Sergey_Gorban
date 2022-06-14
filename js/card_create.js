@@ -55,8 +55,12 @@ const sourceEducationalProjects = [
 ];
 const sourceCommercialProjects = [];
 
-const galleryEducationalProjects = document.getElementById('educational-projects').querySelector('.project-card-gallery');;
-const galleryCommercialProjects = document.getElementById('commercial-projects').querySelector('.project-card-gallery');;
+const EducationalProjectsBlock = document.getElementById('educational-projects').querySelector('.popup__content');
+EducationalProjectsBlock.innerHTML = '<div class="project-card-gallery card-rotate-gallery">';
+const CommercialProjectsBlock = document.getElementById('commercial-projects').querySelector('.popup__content');
+CommercialProjectsBlock.innerHTML = '<div class="project-card-gallery card-rotate-gallery">';
+const galleryEducationalProjects = EducationalProjectsBlock.querySelector('.project-card-gallery');
+const galleryCommercialProjects = CommercialProjectsBlock.querySelector('.project-card-gallery');
 
 class Card {
     constructor(cardData) {

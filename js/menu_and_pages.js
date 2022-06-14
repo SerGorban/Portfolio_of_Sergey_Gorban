@@ -2,6 +2,18 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    /*const MenuItems = [];
+
+    class MenuItem {
+        constructor(name, link = '#', iconName) {
+            this.name = name;
+            this.link = link;
+            this.iconName = iconName;
+        }
+        
+    }
+    */
+
     let isMobile = {
         Android: function() {return navigator.userAgent.match(/Android/i);},
         BlackBerry: function() {return navigator.userAgent.match(/BlackBerry/i);},

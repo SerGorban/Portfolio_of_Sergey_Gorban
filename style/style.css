@@ -317,6 +317,8 @@ body.lock {
   background: rgba(0, 0, 0, 0.7);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
+  -webkit-transition: 0.6s all 0s;
+  transition: 0.6s all 0s;
 }
 .popup__wrapper {
   display: -ms-grid;
@@ -764,8 +766,8 @@ body.lock {
   font-weight: 500;
   color: #fff;
   text-align: justify;
-  -webkit-transform: rotateY(-8deg) rotateX(8deg) translateX(-30px);
-          transform: rotateY(-8deg) rotateX(8deg) translateX(-30px);
+  -webkit-transform: rotateY(-8deg) rotateX(8deg) translateX(-15px);
+          transform: rotateY(-8deg) rotateX(8deg) translateX(-15px);
 }
 .about-greeting__about-me p::before {
   content: "";
@@ -960,6 +962,7 @@ body.lock {
 }
 
 .contacts-gallery {
+  position: relative;
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
@@ -970,7 +973,17 @@ body.lock {
           align-items: center;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0);
+}
+.contacts-gallery__name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 23vw;
+  font-weight: 600;
+  opacity: 0.6;
 }
 .contacts-gallery__wrapper {
   display: -webkit-box;
@@ -983,9 +996,9 @@ body.lock {
           justify-content: center;
 }
 .contacts-gallery__conteiner {
-  width: 100px;
-  height: 100px;
-  margin: 10px;
+  width: 120px;
+  height: 120px;
+  margin: 15px;
   -webkit-perspective: 1000px;
           perspective: 1000px;
   -webkit-perspective-origin: center;
@@ -1001,13 +1014,6 @@ body.lock {
   -webkit-transition: 0.6s all 0s;
   transition: 0.6s all 0s;
 }
-.contacts-gallery__item:hover {
-  -webkit-box-shadow: 0px 0px 20px 3px #fff;
-          box-shadow: 0px 0px 20px 3px #fff;
-}
-.contacts-gallery__item:hover .contacts-gallery__icon {
-  text-shadow: 0px 0px 6px #fff;
-}
 .contacts-gallery__link {
   width: 100%;
   height: 100%;
@@ -1021,7 +1027,7 @@ body.lock {
           align-items: center;
 }
 .contacts-gallery__icon {
-  font-size: 45px;
+  font-size: 55px;
   color: #fff;
   -webkit-transition: 0.4s all 0s;
   transition: 0.4s all 0s;

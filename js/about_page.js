@@ -47,7 +47,7 @@ const sourceAbout = [
         iconClass: "icon-about-me"
     },
     {
-        name: "item3",
+        name: "my-story",
         iconClass: "icon-about-me"
     }
 ];
