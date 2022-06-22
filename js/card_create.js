@@ -7,7 +7,7 @@ const sourceEducationalProjects = [
     {
         cardLink: "../educational_projects/mycompany/index.html",
         dataRotateCoefficient: 10,
-        imgSRC: "../img/educational_projects_screens/mycompany.PNG",
+        imgSRC: "../img/educational_projects_screens/mycompany.png",
         title: "Mycompany(First work)",
         category: "Landing, Layout",
         creationDate: "11/2021"
@@ -15,7 +15,7 @@ const sourceEducationalProjects = [
     {
         cardLink: "https://sergorban.github.io/Piroll_portfolio/",
         dataRotateCoefficient: 10,
-        imgSRC: "../img/educational_projects_screens/Piroll.PNG",
+        imgSRC: "../img/educational_projects_screens/Piroll.png",
         title: "Piroll",
         category: "Multipage site, Layout",
         creationDate: "12/2021"
@@ -23,7 +23,7 @@ const sourceEducationalProjects = [
     {
         cardLink: "../educational_projects/matthew_wagerfield_parallax/index.html",
         dataRotateCoefficient: 10,
-        imgSRC: "../img/educational_projects_screens/Matthew_wagerfield_parallax.PNG",
+        imgSRC: "../img/educational_projects_screens/Matthew_wagerfield_parallax.png",
         title: "Matthew wagerfield parallax",
         category: "Parallax-background, Fullscreen",
         creationDate: "01/2022"
@@ -31,7 +31,7 @@ const sourceEducationalProjects = [
     {
         cardLink: "../educational_projects/mountain_parallax/index.html",
         dataRotateCoefficient: 10,
-        imgSRC: "../img/educational_projects_screens/Mountain_parallax.PNG",
+        imgSRC: "../img/educational_projects_screens/Mountain_parallax.png",
         title: "Mountain parallax",
         category: "Parallax-background, Fullscreen",
         creationDate: "01/2022"
@@ -39,7 +39,7 @@ const sourceEducationalProjects = [
     {
         cardLink: "../educational_projects/credit_card_pay/index.html",
         dataRotateCoefficient: 10,
-        imgSRC: "../img/educational_projects_screens/Form_credit_card.PNG",
+        imgSRC: "../img/educational_projects_screens/Form_credit_card.png",
         title: "Credit card",
         category: "Forms",
         creationDate: "02/2022"
