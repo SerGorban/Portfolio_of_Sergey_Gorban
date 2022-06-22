@@ -902,7 +902,7 @@ body.lock {
 		}
 		&-greeting {
 			&__greeting p,
-			&__about-me p {
+			&__about-me div {
 				transform: rotateY(0deg) rotateX(0deg) translateX(0px);
 				&::before,
 				&::after {

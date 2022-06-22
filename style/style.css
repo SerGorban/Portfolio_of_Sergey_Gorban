@@ -1111,11 +1111,11 @@ body.lock {
     height: auto;
     overflow: visible;
   }
-  .about-greeting__greeting p, .about-greeting__about-me p {
+  .about-greeting__greeting p, .about-greeting__about-me div {
     -webkit-transform: rotateY(0deg) rotateX(0deg) translateX(0px);
             transform: rotateY(0deg) rotateX(0deg) translateX(0px);
   }
-  .about-greeting__greeting p::before, .about-greeting__greeting p::after, .about-greeting__about-me p::before, .about-greeting__about-me p::after {
+  .about-greeting__greeting p::before, .about-greeting__greeting p::after, .about-greeting__about-me div::before, .about-greeting__about-me div::after {
     display: none;
   }
 
