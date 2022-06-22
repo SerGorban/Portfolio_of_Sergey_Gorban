@@ -2,6 +2,9 @@
 @import "zeroing.scss";
 
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Potta+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Indie+Flower&family=Potta+One&display=swap');
 
 ::-webkit-scrollbar {
 	display: none;
@@ -186,7 +189,6 @@ body.lock {
 	width: 100%;
 	height: 100%;
 	border: 2px solid rgb(17, 17, 17);
-	//background: rgb(10, 10, 10);
 	background: rgb(17, 17, 17);
 	border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
 	transition: 0.6s all 0s;
@@ -590,8 +592,9 @@ body.lock {
 				display: block;
 				font-size: 40px;
 				font-weight: 500;
-				//font-family: ;
+				font-family: 'Gloria Hallelujah';
 				color:#fff;
+				text-shadow: 0px 0px 8px #000;
 				transform: rotateY(20deg) rotateX(-20deg) translateX(45px);
 				&::before {
 					content:"";
@@ -620,14 +623,17 @@ body.lock {
 			max-width: 600px;
 			margin: 5vw 20px 0 20px;
 			perspective: 400px;
-			& p {
+			& div {
 				display: block;
-				font-size: 28px;
-				font-weight: 500;
-				//font-family: ;
-				color:#fff;
-				text-align: justify;
-				transform: rotateY(-8deg) rotateX(8deg) translateX(-15px);
+				transform: rotateY(8deg) rotateX(-8deg) translateX(35px);
+				& p {
+					font-size: 28px;
+					font-weight: 500;
+					font-family: 'Gloria Hallelujah';
+					color:#fff;
+					text-align: justify;
+					text-shadow: 0px 0px 8px #000;
+				}
 				&::before {
 					content:"";
 					position: absolute;
@@ -667,9 +673,10 @@ body.lock {
 		justify-content: center;
 		align-items: center;
 		& span {
-			font-size: 36px;
-			font-weight: 500;
-			//font-family: ;
+			margin-left: 15px;
+			font-size: 46px;
+			font-weight: 600;
+			font-family: 'Indie Flower';
 			color:#fff;
 		}
 	}
@@ -739,7 +746,6 @@ body.lock {
 	height: 100%;
 	overflow-y: auto;
 	&__conteiner {
-		//max-width: 400px;
 		perspective: 1000px;
 		perspective-origin: center;
 		&:hover {
@@ -750,8 +756,9 @@ body.lock {
 		position: relative;
 		display: grid;
 		grid-template-rows: 200px 1fr;
-		border-radius: 10px;
+		border-radius: 20px 0 20px 0;
 		overflow: hidden;
+		height: 300px;
 		background: #444;
 		transition: 0.6s all 0s;
 		&::after {
@@ -765,10 +772,17 @@ body.lock {
 		}
 		&:hover {
 			box-shadow: 0px 0px 20px 3px #fff;
+			& .project-card-gallery__description {
+				bottom: 0;
+			}
 		}
 	}
 	&__img {
-		height: 200px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 		background: #333;
 		overflow: hidden;
 		& img {
@@ -778,9 +792,17 @@ body.lock {
 		}
 	}
 	&__description {
+		position: absolute;
+		bottom: -40%;
+		left: 0;
+		width: 100%;
+		height: 60%;
+		border-radius: 0 20px 0 0;
+		background: rgba($color: #333, $alpha: 0.8);
 		display: grid;
 		grid-template-rows: 1fr 1fr 1fr; 
 		padding: 10px;
+		transition: 0.6s all 0s;
 		& div:last-child {
 			margin-bottom: 0;
 		}
@@ -789,9 +811,13 @@ body.lock {
 	&__category,
 	&__date {
 		margin: 10px 0;
-		//font-family: ;
-		font-size: 18px;
+		font-size: 17px;
 		font-weight: 600;
+		display: flex;
+		font-family: 'Gloria Hallelujah';
+		& span {
+			display: block;
+		}
 	}
 	&__field-name {
 		color: #fff;
@@ -799,6 +825,7 @@ body.lock {
 	}
 	&__field-value {
 		color: #fff;
+		text-align: center;
 	}
 }
 
@@ -815,9 +842,9 @@ body.lock {
 		left: 50%;
 		transform: translate(-50%, -50%);
 		color: #fff;
-		font-size: 23vw;
+		font-size: 25vw;
 		font-weight: 600;
-		//font-family: ;
+		font-family: 'Indie Flower';
 		opacity: 0.6;
 	}
 	&__wrapper {
@@ -891,6 +918,10 @@ body.lock {
 			margin-left: 25px;
 			margin-bottom: 30px;
 		}
+	}
+
+	.project-card-gallery__description {
+		bottom: 0;
 	}
 }
 

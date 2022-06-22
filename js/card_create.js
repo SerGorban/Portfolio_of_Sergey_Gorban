@@ -5,52 +5,44 @@ const sourceCommercialProjects = '../commercial_projects.json';
 // array of objects(data about projects for github)
 const sourceEducationalProjects = [
     {
-        cardLink: "#",
+        cardLink: "../educational_projects/mycompany/index.html",
         dataRotateCoefficient: 10,
-        imgSRC: "https://www.meme-arsenal.com/memes/83ec4738457d3a469b297fd3c679096f.jpg",
-        title: "Test",
-        category: "Test",
-        creationDate: "02.05.2022"
+        imgSRC: "../img/educational_projects_screens/mycompany.PNG",
+        title: "Mycompany(First work)",
+        category: "Landing, Layout",
+        creationDate: "11/2021"
     },
     {
-        cardLink: "#",
+        cardLink: "https://sergorban.github.io/Piroll_portfolio/",
         dataRotateCoefficient: 10,
-        imgSRC: "https://www.meme-arsenal.com/memes/83ec4738457d3a469b297fd3c679096f.jpg",
-        title: "Test2",
-        category: "Test2",
-        creationDate: "02.05.2022"
+        imgSRC: "../img/educational_projects_screens/Piroll.PNG",
+        title: "Piroll",
+        category: "Multipage site, Layout",
+        creationDate: "12/2021"
     },
     {
-        cardLink: "#",
+        cardLink: "../educational_projects/matthew_wagerfield_parallax/index.html",
         dataRotateCoefficient: 10,
-        imgSRC: "https://www.meme-arsenal.com/memes/83ec4738457d3a469b297fd3c679096f.jpg",
-        title: "Test",
-        category: "Test",
-        creationDate: "02.05.2022"
+        imgSRC: "../img/educational_projects_screens/Matthew_wagerfield_parallax.PNG",
+        title: "Matthew wagerfield parallax",
+        category: "Parallax-background, Fullscreen",
+        creationDate: "01/2022"
     },
     {
-        cardLink: "#",
+        cardLink: "../educational_projects/mountain_parallax/index.html",
         dataRotateCoefficient: 10,
-        imgSRC: "https://www.meme-arsenal.com/memes/83ec4738457d3a469b297fd3c679096f.jpg",
-        title: "Test",
-        category: "Test",
-        creationDate: "02.05.2022"
+        imgSRC: "../img/educational_projects_screens/Mountain_parallax.PNG",
+        title: "Mountain parallax",
+        category: "Parallax-background, Fullscreen",
+        creationDate: "01/2022"
     },
     {
-        cardLink: "#",
+        cardLink: "../educational_projects/credit_card_pay/index.html",
         dataRotateCoefficient: 10,
-        imgSRC: "https://www.meme-arsenal.com/memes/83ec4738457d3a469b297fd3c679096f.jpg",
-        title: "Test",
-        category: "Test",
-        creationDate: "02.05.2022"
-    },
-    {
-        cardLink: "#",
-        dataRotateCoefficient: 10,
-        imgSRC: "https://www.meme-arsenal.com/memes/83ec4738457d3a469b297fd3c679096f.jpg",
-        title: "Test",
-        category: "Test",
-        creationDate: "02.05.2022"
+        imgSRC: "../img/educational_projects_screens/Form_credit_card.PNG",
+        title: "Credit card",
+        category: "Forms",
+        creationDate: "02/2022"
     }
 ];
 const sourceCommercialProjects = [];

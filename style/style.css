@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Potta+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Potta+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Indie+Flower&family=Potta+One&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -154,7 +157,7 @@ body.lock {
   height: 80px;
   border-radius: 50%;
   text-decoration: none;
-  color: #2b2824;
+  color: rgb(43, 40, 36);
   background: transparent;
   outline: none;
   -webkit-transition: 0.6s all 0s;
@@ -223,20 +226,20 @@ body.lock {
           box-shadow: 0px 0px 6px 0px #fff;
 }
 .circular-menu__button .button-shell {
-  -webkit-box-shadow: 0px 0px 4px 0px #111111;
-          box-shadow: 0px 0px 4px 0px #111111;
+  -webkit-box-shadow: 0px 0px 4px 0px rgb(17, 17, 17);
+          box-shadow: 0px 0px 4px 0px rgb(17, 17, 17);
 }
 .circular-menu__button:hover .button-shell {
-  -webkit-box-shadow: 0px 0px 3px 7px #111111;
-          box-shadow: 0px 0px 3px 7px #111111;
+  -webkit-box-shadow: 0px 0px 3px 7px rgb(17, 17, 17);
+          box-shadow: 0px 0px 3px 7px rgb(17, 17, 17);
 }
 .circular-menu__button_active ~ .circular-menu__item .button-shell {
-  -webkit-box-shadow: 0px 0px 4px 0px #111111;
-          box-shadow: 0px 0px 4px 0px #111111;
+  -webkit-box-shadow: 0px 0px 4px 0px rgb(17, 17, 17);
+          box-shadow: 0px 0px 4px 0px rgb(17, 17, 17);
 }
 .circular-menu__button_active ~ .circular-menu__item:hover .button-shell {
-  -webkit-box-shadow: 0px 0px 3px 7px #111111;
-          box-shadow: 0px 0px 3px 7px #111111;
+  -webkit-box-shadow: 0px 0px 3px 7px rgb(17, 17, 17);
+          box-shadow: 0px 0px 3px 7px rgb(17, 17, 17);
 }
 .circular-menu__button_active ~ .circular-menu__item .circular-menu__item_icon {
   color: #fff;
@@ -273,8 +276,8 @@ body.lock {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 2px solid #111111;
-  background: #111111;
+  border: 2px solid rgb(17, 17, 17);
+  background: rgb(17, 17, 17);
   border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
   -webkit-transition: 0.6s all 0s;
   transition: 0.6s all 0s;
@@ -504,7 +507,7 @@ body.lock {
   height: 170px;
   border-radius: 50%;
   text-decoration: none;
-  color: #2b2824;
+  color: rgb(43, 40, 36);
   background: transparent;
   outline: none;
   -webkit-transition: 0.6s all 0s;
@@ -729,7 +732,9 @@ body.lock {
   display: block;
   font-size: 40px;
   font-weight: 500;
+  font-family: "Gloria Hallelujah";
   color: #fff;
+  text-shadow: 0px 0px 8px #000;
   -webkit-transform: rotateY(20deg) rotateX(-20deg) translateX(45px);
           transform: rotateY(20deg) rotateX(-20deg) translateX(45px);
 }
@@ -760,16 +765,20 @@ body.lock {
   -webkit-perspective: 400px;
           perspective: 400px;
 }
-.about-greeting__about-me p {
+.about-greeting__about-me div {
   display: block;
+  -webkit-transform: rotateY(8deg) rotateX(-8deg) translateX(35px);
+          transform: rotateY(8deg) rotateX(-8deg) translateX(35px);
+}
+.about-greeting__about-me div p {
   font-size: 28px;
   font-weight: 500;
+  font-family: "Gloria Hallelujah";
   color: #fff;
   text-align: justify;
-  -webkit-transform: rotateY(-8deg) rotateX(8deg) translateX(-15px);
-          transform: rotateY(-8deg) rotateX(8deg) translateX(-15px);
+  text-shadow: 0px 0px 8px #000;
 }
-.about-greeting__about-me p::before {
+.about-greeting__about-me div::before {
   content: "";
   position: absolute;
   top: -5px;
@@ -779,7 +788,7 @@ body.lock {
   border: solid 4px #fff;
   border-color: #fff #fff transparent transparent;
 }
-.about-greeting__about-me p::after {
+.about-greeting__about-me div::after {
   content: "";
   position: absolute;
   bottom: -5px;
@@ -812,8 +821,10 @@ body.lock {
           align-items: center;
 }
 .skill__name span {
-  font-size: 36px;
-  font-weight: 500;
+  margin-left: 15px;
+  font-size: 46px;
+  font-weight: 600;
+  font-family: "Indie Flower";
   color: #fff;
 }
 
@@ -907,8 +918,9 @@ body.lock {
   display: grid;
   -ms-grid-rows: 200px 1fr;
   grid-template-rows: 200px 1fr;
-  border-radius: 10px;
+  border-radius: 20px 0 20px 0;
   overflow: hidden;
+  height: 300px;
   background: #444;
   -webkit-transition: 0.6s all 0s;
   transition: 0.6s all 0s;
@@ -927,8 +939,15 @@ body.lock {
   -webkit-box-shadow: 0px 0px 20px 3px #fff;
           box-shadow: 0px 0px 20px 3px #fff;
 }
+.project-card-gallery__item:hover .project-card-gallery__description {
+  bottom: 0;
+}
 .project-card-gallery__img {
-  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: #333;
   overflow: hidden;
 }
@@ -939,19 +958,35 @@ body.lock {
      object-fit: cover;
 }
 .project-card-gallery__description {
+  position: absolute;
+  bottom: -40%;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  border-radius: 0 20px 0 0;
+  background: rgba(51, 51, 51, 0.8);
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   padding: 10px;
+  -webkit-transition: 0.6s all 0s;
+  transition: 0.6s all 0s;
 }
 .project-card-gallery__description div:last-child {
   margin-bottom: 0;
 }
 .project-card-gallery__title, .project-card-gallery__category, .project-card-gallery__date {
   margin: 10px 0;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Gloria Hallelujah";
+}
+.project-card-gallery__title span, .project-card-gallery__category span, .project-card-gallery__date span {
+  display: block;
 }
 .project-card-gallery__field-name {
   color: #fff;
@@ -959,6 +994,7 @@ body.lock {
 }
 .project-card-gallery__field-value {
   color: #fff;
+  text-align: center;
 }
 
 .contacts-gallery {
@@ -981,8 +1017,9 @@ body.lock {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   color: #fff;
-  font-size: 23vw;
+  font-size: 25vw;
   font-weight: 600;
+  font-family: "Indie Flower";
   opacity: 0.6;
 }
 .contacts-gallery__wrapper {
@@ -1007,7 +1044,7 @@ body.lock {
 .contacts-gallery__item {
   width: 100%;
   height: 100%;
-  background: #0a0a0a;
+  background: rgb(10, 10, 10);
   border-radius: 25px;
   -webkit-box-shadow: inset 0px 0px 20px 3px #000;
           box-shadow: inset 0px 0px 20px 3px #000;
@@ -1088,5 +1125,9 @@ body.lock {
   .skill:nth-child(2n) {
     margin-left: 25px;
     margin-bottom: 30px;
+  }
+
+  .project-card-gallery__description {
+    bottom: 0;
   }
 }

@@ -44,15 +44,15 @@ const sourceAbout = [
     },
     {
         name: "about-skills",
-        iconClass: "icon-about-me"
+        iconClass: "icon-connectdevelop"
     },
     {
         name: "my-story",
-        iconClass: "icon-about-me"
+        iconClass: "icon-mug-hot"
     }
 ];
 
-const popupAbout = document.querySelector('.popup_about');
+const popupAbout = document.getElementById('about');
 if (popupAbout) {
     const popupAboutContent = popupAbout.querySelector('.popup__content');
     popupAboutContent.innerHTML = 
@@ -190,6 +190,7 @@ function closeAboutMenu() {
 function addContentBlocks() {
     aboutGreetingContent();
     aboutSkillsContent();
+    myStoryContent();
 }
 
 function aboutGreetingContent() {
@@ -203,9 +204,16 @@ function aboutGreetingContent() {
                     </p>
                 </div>
                 <div class="about-greeting__about-me">
-                    <p>
-                        Since the beginning of 2021, I've enjoyed ... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
+                    <div>
+                        <p>
+                            I've been learning and practice web development since 2021. 
+                        </p>
+                        <p>   
+                            I enjoy creating beautiful and intuitive dynamic web interfaces. I 
+                            try to constantly improve myself in web development and learn 
+                            new technologies.
+                        </p>                    
+                    </div>
                 </div>
             </div>
         </div>`;
@@ -316,6 +324,19 @@ function aboutSkillsContent() {
         } else {
     
         }
+    }
+}
+
+function myStoryContent() {
+    const contentBlockConteiner = document.getElementById('my-story');
+
+    const template = 
+        `<div class="system-message">
+            Sorry. This page is currently under development...
+        </div>`;
+
+    if (contentBlockConteiner) {
+        contentBlockConteiner.innerHTML = template;
     }
 }
 
