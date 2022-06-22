@@ -7,7 +7,7 @@ const sourceEducationalProjects = [
     {
         cardLink: "https://sergorban.github.io/mycompany/",
         dataRotateCoefficient: 10,
-        imgSRC: "../img/educational_projects_screens/mycompany.jpg",
+        imgSRC: "img/educational_projects_screens/mycompany.jpg",
         title: "Mycompany(First work)",
         category: "Landing, Layout",
         creationDate: "11/2021"
@@ -15,7 +15,7 @@ const sourceEducationalProjects = [
     {
         cardLink: "https://sergorban.github.io/Piroll_portfolio/",
         dataRotateCoefficient: 10,
-        imgSRC: "../img/educational_projects_screens/Piroll.jpg",
+        imgSRC: "img/educational_projects_screens/Piroll.jpg",
         title: "Piroll",
         category: "Multipage site, Layout",
         creationDate: "12/2021"
@@ -23,7 +23,7 @@ const sourceEducationalProjects = [
     {
         cardLink: "https://sergorban.github.io/matthew_wagerfield_parallax/",
         dataRotateCoefficient: 10,
-        imgSRC: "../img/educational_projects_screens/Matthew_wagerfield_parallax.jpg",
+        imgSRC: "img/educational_projects_screens/Matthew_wagerfield_parallax.jpg",
         title: "Matthew wagerfield parallax",
         category: "Parallax-background, Fullscreen",
         creationDate: "01/2022"
@@ -31,7 +31,7 @@ const sourceEducationalProjects = [
     {
         cardLink: "https://sergorban.github.io/mountain_parallax/",
         dataRotateCoefficient: 10,
-        imgSRC: "../img/educational_projects_screens/Mountain_parallax.jpg",
+        imgSRC: "img/educational_projects_screens/Mountain_parallax.jpg",
         title: "Mountain parallax",
         category: "Parallax-background, Fullscreen",
         creationDate: "01/2022"
@@ -39,7 +39,7 @@ const sourceEducationalProjects = [
     {
         cardLink: "https://sergorban.github.io/credit_card_pay/",
         dataRotateCoefficient: 10,
-        imgSRC: "../img/educational_projects_screens/Form_credit_card.jpg",
+        imgSRC: "img/educational_projects_screens/Form_credit_card.jpg",
         title: "Credit card",
         category: "Forms",
         creationDate: "02/2022"
